@@ -1,0 +1,9 @@
+#pip install pyodbc
+import pyodbc
+
+conn = pyodbc.connect(r'Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=my/file/path/here;')
+cursor = conn.cursor()
+cursor.execute('select * from column_name')
+
+for row in cursor.fetchall():
+    print (row)

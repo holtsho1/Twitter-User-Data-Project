@@ -1,0 +1,16 @@
+!pip install sqlalchemy==1.3.9
+!pip install ibm_db_sa
+%load_ext sql
+
+# Remember the connection string is of the format:
+# %sql ibm_db_sa://my-username:my-password@hostname:port/BLUDB?security=SSL
+# Enter the connection string for your Db2 on Cloud database instance below
+# i.e. copy after db2:// from the URI string in Service Credentials of your Db2 instance. Remove the double quotes at the end.
+%sql ibm_db_sa://
+
+import pandas
+Tweet_data_CSV = pandas.write_csv('tweet_data_python.csv')
+
+#https://stackoverflow.com/questions/3635166/how-do-i-import-csv-file-into-a-mysql-
+#https://python.plainenglish.io/how-to-import-a-csv-file-into-a-mysql-database-using-python-script-791b051c5c33
+#https://www.codegrepper.com/code-examples/sql/load+csv+file+into+mysql+using+python+pandas

@@ -1,5 +1,6 @@
 from __init__endpoint import *
-
+import pandas
+#import database endpoint
 search_headers = {
     'Authorization': 'Bearer {}'.format(access_token)
 }
@@ -25,4 +26,7 @@ for x in tweet_data['statuses']:
     print(x['text'] + '\n')
 #print(tweet_data['statuses']['text']['created_at']['screen_name'])
 
-#write 
+#write data to CSV for easier manipulation
+#https://developer.twitter.com/en/docs/tutorials/five-ways-to-convert-a-json-object-to-csv
+df = pandas.DataFrame(tweet_data['data'])
+df.to_csv('tweet_data_python.csv')

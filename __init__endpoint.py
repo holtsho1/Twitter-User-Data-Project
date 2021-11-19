@@ -1,3 +1,5 @@
+#pip install tweepy
+
 client_key = '' #import your own key here from TwitterAPI
 client_secret = '' #import your own secret here from TwitterAPI
 access_token = '' #import your own access token from TwitterAPI
